@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 2
+  replicas: {{ .Values.frontend.replicas }}
   selector:
     matchLabels:
       app: frontend
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: softconsist/student-frontend:prod-v14
+        image: {{ .Values.frontend.image }}:{{ .Values.frontend.tag }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.frontend.servicePort }}

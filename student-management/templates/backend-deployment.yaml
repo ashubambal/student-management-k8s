@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      initContainers:
+      - name: wait-for-mysql
+        image: busybox:1.35
+        command:
+        - sh
+        - -c
+        - |
+          until nc -z mysql 3306;
+          do
+            echo "Waiting for MySQL..."
+            sleep 5
+          done
+      containers:
+      - name: backend
+        image: {{ .Values.backend.image }}:{{ .Values.backend.tag }}
+        ports:
+        - containerPort: {{ .Values.backend.servicePort }}

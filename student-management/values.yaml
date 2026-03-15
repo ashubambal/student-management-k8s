@@ -1,0 +1,17 @@
+frontend:
+  image: softconsist/student-frontend
+  tag: prod-v14
+  replicas: 2
+  servicePort: 80
+
+backend:
+  image: softconsist/student-backend
+  tag: prod-v15
+  replicas: 2
+  servicePort: 3000
+
+mysql:
+  image: mysql
+  tag: 8
+  rootPassword: password
+  database: studentsdb

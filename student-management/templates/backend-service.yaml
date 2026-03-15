@@ -6,5 +6,5 @@ spec:
   selector:
     app: backend
   ports:
-  - port: 3000
+  - port: {{ .Values.backend.servicePort }}
     targetPort: 3000
