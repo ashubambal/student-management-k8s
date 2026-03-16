@@ -1,4 +1,5 @@
 loki:
+
   auth_enabled: false
 
   commonConfig:
@@ -6,6 +7,29 @@ loki:
 
   storage:
     type: filesystem
+
+  schemaConfig:
+    configs:
+      - from: 2024-01-01
+        store: boltdb-shipper
+        object_store: filesystem
+        schema: v12
+        index:
+          prefix: loki_index_
+          period: 24h
+
+  storage_config:
+    boltdb_shipper:
+      active_index_directory: /var/loki/index
+      cache_location: /var/loki/cache
+      shared_store: filesystem
+
+    filesystem:
+      directory: /var/loki/chunks
+
+  persistence:
+    enabled: true
+    size: 10Gi
 
 promtail:
   enabled: true
