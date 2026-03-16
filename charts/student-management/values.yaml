@@ -1,6 +1,6 @@
 frontend:
   image: softconsist/student-frontend
-  tag: prod-v16
+  tag: prod-v14
   replicas: 2
   servicePort: 80
 
