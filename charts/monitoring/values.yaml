@@ -1,0 +1,15 @@
+kube-prometheus-stack:
+
+  grafana:
+    enabled: true
+    adminPassword: admin
+    sidecar:
+    dashboards:
+      enabled: true
+
+  prometheus:
+    prometheusSpec:
+      retention: 7d
+
+  alertmanager:
+    enabled: true
