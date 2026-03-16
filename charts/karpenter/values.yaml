@@ -1,0 +1,13 @@
+settings:
+  clusterName: Shared-cluster
+  clusterEndpoint: https://71A63A6AC8B180890192071909BC093D.gr7.us-east-1.eks.amazonaws.com
+
+serviceAccount:
+  create: true
+  name: karpenter
+
+controller:
+  resources:
+    requests:
+      cpu: 1
+      memory: 1Gi

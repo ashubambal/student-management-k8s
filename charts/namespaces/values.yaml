@@ -3,3 +3,4 @@ namespaces:
   - name: logging
   - name: argocd
   - name: goldilocks
+  - name: karpenter

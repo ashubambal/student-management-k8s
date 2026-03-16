@@ -1,0 +1,10 @@
+apiVersion: v2
+name: karpenter
+description: Karpenter autoscaling controller
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: karpenter
+    version: "0.37.0"
+    repository: "https://charts.karpenter.sh"
