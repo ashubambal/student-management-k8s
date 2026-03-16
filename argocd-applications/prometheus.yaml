@@ -14,7 +14,7 @@ spec:
 
     helm:
       valueFiles:
-        - prometheus-values.yaml
+        - values.yaml
 
   destination:
     server: https://kubernetes.default.svc
