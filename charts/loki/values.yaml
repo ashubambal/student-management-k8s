@@ -1,11 +1,11 @@
 loki:
-  persistence:
-    enabled: true
-    size: 10Gi
-  service:
-    type: ClusterIP
+  auth_enabled: false
+
+  commonConfig:
+    replication_factor: 1
+
+  storage:
+    type: filesystem
+
 promtail:
   enabled: true
-  config:
-    clients:
-      - url: http://loki:3100/loki/api/v1/push
