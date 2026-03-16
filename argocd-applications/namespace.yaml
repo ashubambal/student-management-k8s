@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace-creation
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/ashubambal/student-management-k8s.git
+    path: namespaces
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
