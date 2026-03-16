@@ -1,12 +1,12 @@
 frontend:
   image: softconsist/student-frontend
-  tag: prod-v14
+  tag: latest
   replicas: 2
   servicePort: 80
 
 backend:
   image: softconsist/student-backend
-  tag: prod-v16
+  tag: latest
   replicas: 2
   servicePort: 3000
 
