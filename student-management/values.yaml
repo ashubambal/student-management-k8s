@@ -6,7 +6,7 @@ frontend:
 
 backend:
   image: softconsist/student-backend
-  tag: prod-v15
+  tag: prod-v16
   replicas: 2
   servicePort: 3000
 
