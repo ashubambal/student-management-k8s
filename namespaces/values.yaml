@@ -1,1 +1,2 @@
-name: monitoring
+namespace:
+  name: my-namespace
