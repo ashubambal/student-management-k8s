@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/ashubambal/student-management-k8s.git
-    chart: student-management
+    path: student-management   # path to Helm chart directory
     targetRevision: main
     helm:
       valueFiles:
