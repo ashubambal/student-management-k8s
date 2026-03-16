@@ -9,6 +9,7 @@ spec:
   source:
     repoURL: https://github.com/ashubambal/student-management-k8s.git
     chart: student-management
+    targetRevision: main
     helm:
       valueFiles:
         - values.yaml
