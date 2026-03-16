@@ -1,0 +1,21 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: grafanaagents.monitoring.grafana.com
+spec:
+  group: monitoring.grafana.com
+  scope: Namespaced
+  names:
+    plural: grafanaagents
+    singular: grafanaagent
+    kind: GrafanaAgent
+    shortNames:
+      - grafanaagent
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          description: GrafanaAgent defines configuration for the Grafana Agent
