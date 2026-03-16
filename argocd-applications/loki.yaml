@@ -1,23 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespace-creation
+  name: loki-stack
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/ashubambal/student-management-k8s.git
-    path: charts/namespaces
+    repoURL: https://github.com/YOUR_USER/student-management-k8s
     targetRevision: main
-    helm:
-      valueFiles:
-        - values.yaml
-
+    path: charts/loki
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
-
+    namespace: logging
   syncPolicy:
     automated:
       prune: true

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: loki-stack
+description: Loki logging stack
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: loki
+    version: "5.41.3"
+    repository: "https://grafana.github.io/helm-charts"
+
+maintainers:
+  - name: Ashutosh Bambal
+    email: ashutoshbambal@gmail.com
