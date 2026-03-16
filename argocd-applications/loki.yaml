@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USER/student-management-k8s
+    repoURL: https://github.com/ashubambal/student-management-k8s.git
     targetRevision: main
     path: charts/loki
   destination:
