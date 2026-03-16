@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: prometheuses.monitoring.coreos.com
+spec:
+  group: monitoring.coreos.com
+  names:
+    kind: Prometheus
+    plural: prometheuses
+    singular: prometheus
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: servicemonitors.monitoring.coreos.com
+spec:
+  group: monitoring.coreos.com
+  names:
+    kind: ServiceMonitor
+    plural: servicemonitors
+    singular: servicemonitor
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: prometheusrules.monitoring.coreos.com
+spec:
+  group: monitoring.coreos.com
+  names:
+    kind: PrometheusRule
+    plural: prometheusrules
+    singular: prometheusrule
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
