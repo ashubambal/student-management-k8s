@@ -1,0 +1,15 @@
+groups:
+- name: student-app-alerts
+
+  rules:
+
+  - alert: BackendHighCPU
+    expr: rate(container_cpu_usage_seconds_total[5m]) > 0.5
+    for: 2m
+
+    labels:
+      severity: warning
+
+    annotations:
+      summary: Backend CPU usage high
+      description: CPU usage above 50% for 2 minutes
