@@ -1,3 +1,5 @@
-namespace:
+namespaces:
   - name: monitoring
   - name: logging
+  - name: argocd
+  - name: goldilocks
