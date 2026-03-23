@@ -1,0 +1,6 @@
+# Ignore yargs locales
+yargs/locales/
+
+
+# Ignore node modules
+node_modules/
