@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: student-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -14,7 +16,8 @@ spec:
             name: frontend-service
             port:
               number: 80
-      - path: /api/
+
+      - path: /api
         pathType: Prefix
         backend:
           service:
