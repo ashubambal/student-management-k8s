@@ -1,0 +1,9 @@
+alertmanager:
+  alertmanagerSpec:
+    alertmanagerConfigSelector:
+      matchLabels:
+        release: monitoring
+    replicas: 3
+    # Remove or keep this depending on your chart/operator version
+    # alertmanagerConfigMatcherStrategy:
+    #   type: None

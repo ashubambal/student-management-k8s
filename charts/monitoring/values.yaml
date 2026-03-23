@@ -1,15 +1,11 @@
 kube-prometheus-stack:
-
   grafana:
-    enabled: true
-    adminPassword: admin
     sidecar:
-    dashboards:
-      enabled: true
-
+      dashboards:
+        enabled: true
+        annotations: {}
   prometheus:
     prometheusSpec:
       retention: 7d
-
   alertmanager:
     enabled: true
