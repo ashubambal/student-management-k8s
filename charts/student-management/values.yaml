@@ -15,3 +15,4 @@ mysql:
   tag: 8
   rootPassword: password
   database: studentsdb
+  
