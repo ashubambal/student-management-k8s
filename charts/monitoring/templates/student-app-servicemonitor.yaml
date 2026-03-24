@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: student-app-monitor
+  namespace: monitoring  # Adjust to your Prometheus namespace
+  labels:
+    app: student-backend
+spec:
+  selector:
+    matchLabels:
+      app: student-backend  # Match your backend service labels
+  endpoints:
+  - port: http  # Port name in your Service
+    path: /metrics
+    interval: 15s
+    scrapeTimeout: 10s
